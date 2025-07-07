@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator Switcher</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    select {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Choose a Calculator</h2>
+  <select id="calculatorDropdown" onchange="loadCalculator(this.value)">
+    <option value="">-- Select Calculator --</option>
+    <option value="cal.html">Basic Calculator</option>
+    <option value="scal.html">Scientific Calculator</option>
+  </select>
+
+  <iframe id="calculatorFrame" src="basic.html"></iframe>
+
+  <script>
+    function loadCalculator(page) {
+      if (page) { 
+        document.getElementById('calculatorFrame').src = page;
+      }
+    }
+  </script>
+
+</body>
+</html>
